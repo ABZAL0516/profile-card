@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>profile.js</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="window">
+    <div class="title-bar">
+      <div class="dots">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
+      </div>
+      <div class="filename">profile.js — ~/dev</div>
+    </div>
+
+    <div class="tab-bar">
+      <div class="tab active">profile.js</div>
+    </div>
+
+    <div class="editor-body">
+      <div class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13</div>
+      <div class="code"><span class="cmt">// hey, I'm coding my way in 👋</span>
+<span class="kw">const</span> developer = {
+  <span class="key">name</span>: <span class="str">"Abzal.A"</span>,
+  <span class="key">role</span>: <span class="str">"Full Stack Developer (in training)"</span>,
+  <span class="key">status</span>: <span class="str">"open to opportunities"</span>,
+  <span class="key">stack</span>: [<span class="str">"HTML"</span>, <span class="str">"CSS"</span>, <span class="str">"JavaScript"</span>, <span class="str">"Node.js"</span>],
+  <span class="key">currentlyLearning</span>: <span class="str">"React"</span>, <span class="str">"Cloud Services"</span>,
+  <span class="key">funFact</span>: <span class="str">"debugs better with coffee ☕"</span>,
+      <span class="str">"Get's power to code by sleeping well 🛌"</span>,
+};
+
+<span class="kw">export default</span> developer;<span class="cursor"></span></div>
+    </div>
+
+    <div class="run-row">
+      <button class="run-btn" onclick="runCode()">▶ Run</button>
+      <span class="run-hint">console.log(developer.status)</span>
+    </div>
+
+    <div class="console" id="console">
+      <span class="prompt"></span><span class="out" id="consoleOut">click run to view about me</span>
+    </div>
+
+    <div class="links">
+      <a href="#">GitHub ↗</a>
+      <a href="#">LinkedIn ↗</a>
+      <a href="#">Portfolio ↗</a>
+    </div>
+  </div>
+
+<script>
+  function runCode() {
+    const out = document.getElementById('consoleOut');
+    const message = "👋 Hello! I'm Abzal.A 💻 | Aspiring Full Stack Developer passionate about crafting clean, interactive web applications 🚀. Turning ideas into reality with HTML, CSS, JavaScript & Node.js ⚡. Always learning, debugging 🔍, and leveling up my dev skills every single day! 🔥";
+    out.textContent = "";
+    let i = 0;
+    const typer = setInterval(() => {
+      out.textContent += message[i];
+      i++;
+      if (i >= message.length) clearInterval(typer);
+    }, 25);
+  }
+</script>
+
+</body>
+</html>
